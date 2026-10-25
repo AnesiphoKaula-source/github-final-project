@@ -3,16 +3,8 @@
 # Do not use this in production. Sample purpose only.
 
 # Author: Upkar Lidder (IBM)
-# Addtional Authors:
-# <your Github username>
-
-# Input:
-# p, principal amount
-# t, time period in years
-# r, annual rate of interest
-
-# Output:
-# simple interest = p*t*r
+# Additional Authors:
+# AnesiphoKaula-source
 
 echo "Enter the principal:"
 read p
@@ -21,6 +13,10 @@ read r
 echo "Enter time period in years:"
 read t
 
-s=$(expr $p \* $t \* $r / 100)
-echo "The simple interest is: "
+# Calculate simple interest using expr
+# Formula: s = (p * r * t) / 100
+numerator=$(expr $p \* $r \* $t)
+s=$(expr $numerator / 100)
+
+echo "The simple interest is:"
 echo $s
